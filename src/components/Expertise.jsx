@@ -37,18 +37,20 @@ function Expertise() {
   return (
     <div className="flex flex-col justify-center text-center pt-exp-top pb-exp-bottom">
       <div className="font-bold text-expertise-title pb-9">My Expertise</div>
-      <div className="flex flex-row justify-center">
+      <div className="flex flex-wrap justify-center">
         {expertiseContent.map((item, index) => (
           <div
             key={item.id}
-            className={`flex flex-row h-exp-box-h w-exp-box-w border-solid border-gray-400 border-exp-box ${
-              index !== expertiseContent.length - 1 && "border-r-0"
-            }`}
+            className={`flex flex-row h-auto w-exp-box-w border-solid border-gray-400 border-exp-box m-1`}
           >
             <div className="flex flex-col px-exp-x py-exp-y">
               <div className="flex flex-row">
                 <div className="pt-1">
-                  <img src={item.icon} alt="pc-screen-icon" />
+                  <img
+                    className="min-w-10 min-h-10"
+                    src={item.icon}
+                    alt="pc-screen-icon"
+                  />
                 </div>
                 <div className="flex flex-col text-start pl-5 pb-4 font-bold text-2xl content-start">
                   <h1
@@ -56,7 +58,7 @@ function Expertise() {
                   >
                     {item.label}
                   </h1>
-                  <p>{item.subLabel}</p>
+                  <p className="whitespace-nowrap">{item.subLabel}</p>
                 </div>
               </div>
               <div className="flex flex-col">

@@ -9,12 +9,13 @@ export default {
         poppins: ["Poppins", "sans"],
       },
       fontSize: {
-        "top-left-name": "170%",
+        "top-left-name": "160%",
         "expertise-title": "75px",
         "expertise-label": "23px",
-        "main-name": "10rem",
-        "menu-item": "1.1rem",
-        "menu-item-id": "0.6em",
+        "main-name": "9.7vw",
+        "main-name-desc": "0.15em",
+        "menu-item": "1rem",
+        "menu-item-id": "0.7em",
       },
       margin: {
         "about-me-top": "23.5vh",
@@ -23,9 +24,11 @@ export default {
       height: {
         "main-name": "205px",
         "exp-box-h": "333px",
+        "exp-icon-h": "42px",
       },
       width: {
         "exp-box-w": "366px",
+        "exp-icon-w": "42px",
       },
       padding: {
         "exp-y": "40px",

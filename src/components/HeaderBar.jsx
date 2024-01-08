@@ -17,17 +17,17 @@ function HeaderBar() {
         <p className="text-white">.</p>
         <p className="text-green-500">_</p>
       </span>
-      <div className="flex flex-row justify-center mx-5 mt-6">
+      <div className="flex flex-row justify-center mx-4 mt-7">
         <div className="flex flex-row justify-between max-w-full bg-transparent text-gray-50">
           {headerMenu.map((menuItem, index) => (
             <div
               key={menuItem.id}
               className="flex flex-col relative text-menu-item"
             >
-              <span className="absolute top-4 right-6 text-gray-400 font-bold text-menu-item-id">
+              <span className="absolute top-2 right-5 text-gray-400 font-bold text-menu-item-id">
                 {`0${index + 1}`}
               </span>
-              <span className="m-6 text-menu-item font-bold">
+              <span className="my-5 mx-5 text-menu-item font-bold">
                 // {menuItem.label}
               </span>
             </div>
