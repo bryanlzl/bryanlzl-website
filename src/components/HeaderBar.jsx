@@ -44,7 +44,7 @@ function HeaderBar() {
             <div
               key={menuItem.id}
               className={`flex flex-col relative text-menu-item ease-in-out duration-300 ${
-                !itemSelected[menuItem.id] && anySelected() && "text-gray-600"
+                !itemSelected[menuItem.id] && anySelected() && "text-gray-500"
               }`}
               onMouseOver={() => {
                 highlightHandler(menuItem.id);
@@ -53,7 +53,11 @@ function HeaderBar() {
                 highlightHandler(menuItem.id);
               }}
             >
-              <span className="absolute top-2 right-5 text-gray-400 font-bold text-menu-item-id">
+              <span
+                className={`absolute top-2 right-5 text-gray-400 font-bold text-menu-item-id ${
+                  !itemSelected[menuItem.id] && anySelected() && "text-gray-500"
+                }`}
+              >
                 {`0${index + 1}`}
               </span>
               <span className="my-5 mx-5 text-menu-item font-bold cursor-pointer">
