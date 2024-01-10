@@ -10,7 +10,8 @@ export default {
       },
       fontSize: {
         "top-left-name": "160%",
-        "expertise-title": "75px",
+        "expertise-title": "70px",
+        "exp-title": "60px",
         "expertise-label": "23px",
         "main-name": "9.7vw",
         "main-name-desc": "0.15em",
@@ -46,6 +47,27 @@ export default {
           "linear-gradient(rgba(36, 36, 36, 0.6) 65%, #cc00ff 55%)",
         "exp-label-2":
           "linear-gradient(rgba(36, 36, 36, 0.6) 65%, #ff5700 55%)",
+      },
+      keyframes: {
+        "project-pulse": {
+          "0%, 100%": {
+            opacity: 0.2,
+            transform: "scale(0.9)",
+          },
+          "50%": {
+            opacity: 1,
+            transform: "scale(1)",
+          },
+        },
+        "arrow-down-bounce": {
+          "0%, 100%": { transform: "translateY(0)" },
+
+          "50%": { transform: "translateY(-2em)" },
+        },
+      },
+      animation: {
+        "project-pulse": "project-pulse 2.5s ease-in-out infinite",
+        "arrow-down-bounce": "arrow-down-bounce 2s infinite",
       },
     },
   },

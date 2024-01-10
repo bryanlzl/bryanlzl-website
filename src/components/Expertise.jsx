@@ -36,7 +36,9 @@ function Expertise() {
 
   return (
     <div className="flex flex-col justify-center text-center pt-exp-top pb-exp-bottom">
-      <div className="font-bold text-expertise-title pb-9">My Expertise</div>
+      <div className="font-bold text-expertise-title pb-9">
+        <h2 className="m-0 p-0">My Expertise</h2>
+      </div>
       <div className="flex flex-wrap justify-center">
         {expertiseContent.map((item, index) => (
           <div

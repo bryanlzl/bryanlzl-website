@@ -12,7 +12,7 @@ function HeaderBar() {
 
   return (
     <div className="font-mono">
-      <span className="flex flex-row font-bold absolute top-9 left-9 text-top-left-name">
+      <span className="flex flex-row font-bold absolute top-9 left-9 text-top-left-name cursor-pointer">
         <p className="text-blue-300">BryanLim</p>
         <p className="text-white">.</p>
         <p className="text-green-500">_</p>
@@ -27,7 +27,7 @@ function HeaderBar() {
               <span className="absolute top-2 right-5 text-gray-400 font-bold text-menu-item-id">
                 {`0${index + 1}`}
               </span>
-              <span className="my-5 mx-5 text-menu-item font-bold">
+              <span className="my-5 mx-5 text-menu-item font-bold cursor-pointer">
                 // {menuItem.label}
               </span>
             </div>
