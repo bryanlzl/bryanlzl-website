@@ -1,9 +1,7 @@
 import React, { useState } from "react";
 import DICLogo from "../assets/workexp/DIC-logo.png";
 import GetGoLogo from "../assets/workexp/GetGo-logo.png";
-import chevronUp from "../assets/icons/chevron-up.svg";
 import chevronDown from "../assets/icons/chevron-down.svg";
-import linkIcon from "../assets/icons/external-link.svg";
 import locationPinIcon from "../assets/icons/location-pin.svg";
 import "../styles/index.css";
 
