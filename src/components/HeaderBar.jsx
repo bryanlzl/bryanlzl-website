@@ -1,14 +1,35 @@
-/* eslint-disable react/jsx-no-comment-textnodes */
+import React, { useState } from "react";
 import "../styles/index.css";
+/* eslint-disable react/jsx-no-comment-textnodes */
 
 function HeaderBar() {
   const headerMenu = [
-    { id: 0, label: "home" },
-    { id: 1, label: "expertise" },
-    { id: 2, label: "projects" },
-    { id: 3, label: "experience" },
-    { id: 4, label: "contact" },
+    { id: 1, label: "home" },
+    { id: 2, label: "expertise" },
+    { id: 3, label: "projects" },
+    { id: 4, label: "experience" },
+    { id: 5, label: "contact" },
   ];
+
+  const initialMenuItemsState = {};
+  headerMenu.forEach((menuItem) => {
+    initialMenuItemsState[menuItem.id] = false;
+  });
+
+  const [itemSelected, setItemSelected] = useState(initialMenuItemsState);
+  const highlightHandler = (itemId) => {
+    setItemSelected((prev) => {
+      return {
+        ...prev,
+        [itemId]: !prev[itemId],
+      };
+    });
+  };
+
+  const anySelected = () => {
+    const checker = (element) => element === true;
+    return Object.values(itemSelected).some(checker);
+  };
 
   return (
     <div className="font-mono">
@@ -22,9 +43,21 @@ function HeaderBar() {
           {headerMenu.map((menuItem, index) => (
             <div
               key={menuItem.id}
-              className="flex flex-col relative text-menu-item"
+              className={`flex flex-col relative text-menu-item ease-in-out duration-300 ${
+                !itemSelected[menuItem.id] && anySelected() && "text-gray-500"
+              }`}
+              onMouseOver={() => {
+                highlightHandler(menuItem.id);
+              }}
+              onMouseOut={() => {
+                highlightHandler(menuItem.id);
+              }}
             >
-              <span className="absolute top-2 right-5 text-gray-400 font-bold text-menu-item-id">
+              <span
+                className={`absolute top-2 right-5 text-gray-400 font-bold text-menu-item-id ${
+                  !itemSelected[menuItem.id] && anySelected() && "text-gray-500"
+                }`}
+              >
                 {`0${index + 1}`}
               </span>
               <span className="my-5 mx-5 text-menu-item font-bold cursor-pointer">
