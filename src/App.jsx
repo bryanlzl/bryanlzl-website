@@ -3,6 +3,7 @@ import HeaderBar from "./components/HeaderBar";
 import AboutMe from "./components/AboutMe";
 import Expertise from "./components/Expertise";
 import Projects from "./components/Projects";
+import WorkExp from "./components/WorkExp";
 
 function App() {
   return (
@@ -11,6 +12,7 @@ function App() {
       <AboutMe />
       <Expertise />
       <Projects />
+      <WorkExp />
     </div>
   );
 }

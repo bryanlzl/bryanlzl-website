@@ -18,7 +18,7 @@ function WorkExp() {
       location: "Singapore",
       startDuration: "Jan 2023",
       endDuration: "Jul 2023",
-      technologies: ["Python", "openpyxl", "PowerBI", "UIPath"],
+      technology: ["Python", "openpyxl", "PowerBI", "UIPath"],
       companyLogo: DICLogo,
     },
     {
@@ -30,24 +30,53 @@ function WorkExp() {
       location: "Singapore",
       startDuration: "May 2022",
       endDuration: "Aug 2022",
-      technologies: ["React", "TypeScript", "Svelte"],
+      technology: ["React", "TypeScript", "Svelte"],
       companyLogo: GetGoLogo,
     },
   ];
+
+  const expand = {};
+  workExpContent.forEach((wexp) => {
+    expand[wexp.id] = true;
+  });
+
+  const [expandState, setExpandState] = useState(expand);
+
+  const expandHandler = (wIdx) => {
+    setExpandState((prev) => {
+      return { ...prev, [wIdx]: !prev[wIdx] };
+    });
+  };
+
   return (
     <div className="flex flex-col text-center mb-40">
       <div className="font-bold text-exp-title mb-[2.8vh]">
         <h2 className="m-0 p-0 self-center">Experience</h2>
       </div>
       {workExpContent.map((item) => (
-        <div key={item.idx} className="self-center">
-          <div className="flex flex-row justify-between bg-[#831edf] w-[40vw] min-w-[550px] max-w-[800px] text-[0.8em] lg:text-[1em] text-left font-bold py-[12px] px-[20px]">
+        <div key={item.id} className="self-center">
+          <div
+            className="!relative flex flex-row justify-between bg-[#831edf] mb-3 transition-all duration-300 hover:bg-[#ac50ff] w-[40vw] min-w-[550px] max-w-[800px] text-[0.8em] lg:text-[1em] text-left font-bold py-[12px] px-[20px] rounded-md"
+            onClick={() => {
+              expandHandler(item.id);
+            }}
+          >
             <h3>{`${item.role + " @ " + item.company}`}</h3>
             <p>{`${item.startDuration + " - " + item.endDuration}`}</p>
-            <img className="w-[1em]" src={chevronDown} alt="chevronDownIcon" />
+            <img
+              className={`w-[1em] transition-all transform ${
+                expandState[item.id] && "rotate-[-180deg]"
+              } duration-500`}
+              src={chevronDown}
+              alt="chevronDownIcon"
+            />
           </div>
-          <div className="flex flex-row bg-[#241d41] w-[40vw] min-w-[550px] max-w-[800px] text-left">
-            <div className="p-5 w-[75em]">
+          <div
+            className={`flex flex-row rounded-md bg-[#190d4a] my-3 w-[40vw] min-w-[550px] max-w-[800px] text-left ${
+              expandState[item.id] ? "block" : "hidden"
+            } transition-all delay-150 duration-300 overflow-hidden ease-in-out`}
+          >
+            <div className="flex flex-col justify-start p-5 w-[75em]">
               <div className="flex flex-row mb-[0.5em]">
                 <img
                   className="w-[1em] mr-[1em]"
@@ -57,6 +86,16 @@ function WorkExp() {
                 <p>{item.location}</p>
               </div>
               <p className="text-gray-300">{item.responsibility}</p>
+              <span className="flex flex-row">
+                {item.technology.map((tech, techId) => (
+                  <div
+                    key={techId}
+                    className="mt-3 mr-4 p-1 border border-[2px] border-purple-500 radius-4 rounded"
+                  >
+                    {tech}
+                  </div>
+                ))}
+              </span>
             </div>
             <span className="flex flex-row justify-center items-center w-[20em]">
               <img
