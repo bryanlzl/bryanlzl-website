@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../styles/index.css";
 import taskMakerImg from "../assets/projects/task-maker-project.png";
 import currencySwapImg from "../assets/projects/currency-swap-project.png";

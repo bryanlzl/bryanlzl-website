@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import DICLogo from "../assets/workexp/DIC-logo.png";
 import GetGoLogo from "../assets/workexp/GetGo-logo.png";
 import chevronUp from "../assets/icons/chevron-up.svg";
