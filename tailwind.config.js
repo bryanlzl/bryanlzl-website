@@ -9,17 +9,18 @@ export default {
         poppins: ["Poppins", "sans"],
       },
       fontSize: {
-        "top-left-name": "160%",
+        "top-left-name": "1.5vw",
         "expertise-title": "70px",
         "exp-title": "60px",
         "expertise-label": "23px",
         "main-name": "9.7vw",
-        "main-name-desc": "0.15em",
-        "menu-item": "1rem",
-        "menu-item-id": "0.7em",
+        "main-name-desc": "0.14em",
+        "main-name-sub-desc": "0.12em",
+        "menu-item": "1vw",
+        "menu-item-id": "0.7vw",
       },
       margin: {
-        "about-me-top": "23.5vh",
+        "about-me-top": "20vh",
         "about-me-bottom": "40vh",
       },
       height: {
@@ -30,6 +31,7 @@ export default {
       width: {
         "exp-box-w": "366px",
         "exp-icon-w": "42px",
+        "main-name-sub-desc": "35vw",
       },
       padding: {
         "exp-y": "40px",
@@ -48,6 +50,7 @@ export default {
         "exp-label-2":
           "linear-gradient(rgba(36, 36, 36, 0.6) 65%, #ff5700 55%)",
       },
+      backgroundColor: { "custom-cursor": "#5a1a9a" },
       keyframes: {
         "project-pulse": {
           "0%, 100%": {
@@ -64,10 +67,18 @@ export default {
 
           "50%": { transform: "translateY(-2em)" },
         },
+        "blink-cursor": {
+          "0%, 100%": { opacity: 0 },
+          "50%": { opacity: 1 },
+        },
+      },
+      screens: {
+        xs: "500px",
       },
       animation: {
         "project-pulse": "project-pulse 2.5s ease-in-out infinite",
         "arrow-down-bounce": "arrow-down-bounce 2s infinite",
+        "blink-cursor": "blink-cursor 1s infinite",
       },
     },
   },

@@ -16,7 +16,7 @@ function WorkExp() {
       location: "Singapore",
       startDuration: "Jan 2023",
       endDuration: "Jul 2023",
-      technology: ["Python", "openpyxl", "PowerBI", "UIPath"],
+      technology: ["Python", "PowerBI", "UIPath"],
       companyLogo: DICLogo,
     },
     {
@@ -52,9 +52,12 @@ function WorkExp() {
         <h2 className="m-0 p-0 self-center">Experience</h2>
       </div>
       {workExpContent.map((item) => (
-        <div key={item.id} className="self-center">
+        <div
+          key={item.id}
+          className="self-center w-[90vw] sm:w-[80vw] md:w-[70vw] md:w-[65vw] max-w-[800px] text-[0.55em]"
+        >
           <div
-            className="!relative flex flex-row justify-between bg-[#831edf] mb-3 transition-all duration-300 hover:bg-[#ac50ff] w-[40vw] min-w-[550px] max-w-[800px] text-[0.8em] lg:text-[1em] text-left font-bold py-[12px] px-[20px] rounded-md"
+            className="!relative flex flex-row justify-between bg-[#374151] mb-2 transition-all duration-300 hover:bg-[#5a6a85] tracking-wide sm:text-[1.1em] md:text-[1.3em] lg:text-[1.6em] xl:text-[1.8em] text-left font-bold py-[12px] px-[15px] rounded-md"
             onClick={() => {
               expandHandler(item.id);
             }}
@@ -70,11 +73,11 @@ function WorkExp() {
             />
           </div>
           <div
-            className={`flex flex-row rounded-md bg-[#190d4a] my-3 w-[40vw] min-w-[550px] max-w-[800px] text-left ${
+            className={`flex flex-row rounded-md bg-[#19334d] text-left mb-2  sm:text-[1.1em] md:text-[1.3em] lg:text-[1.6em] xl:text-[1.8em] ${
               expandState[item.id] ? "block" : "hidden"
             } transition-all delay-150 duration-300 overflow-hidden ease-in-out`}
           >
-            <div className="flex flex-col justify-start p-5 w-[75em]">
+            <div className="flex flex-col justify-start p-3 w-[75em]">
               <div className="flex flex-row mb-[0.5em]">
                 <img
                   className="w-[1em] mr-[1em]"

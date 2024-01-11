@@ -86,7 +86,7 @@ function Projects() {
       <p className="animate-project-pulse flex space-x-4 font-mono font-bold text-[20px] pb-8 pt-2">
         hover to learn more!
       </p>
-      <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-3 3xl:columns-4 mx-[5%] gap-0">
+      <div className="columns-1 sm:columns-2 md:columns-2 lg:columns-3 3xl:columns-4 mx-[5%] gap-0">
         {expertiseContent.map((item) => {
           return (
             <div
@@ -124,7 +124,9 @@ function Projects() {
                     renderTransition(renderInfo, item.id)
                   }
                 >
-                  <p className="text-[2vmin] overflow-auto">{item.content}</p>
+                  <p className="sm:text-[2vmin] overflow-auto">
+                    {item.content}
+                  </p>
                 </span>
               </span>
               <span className="flex flex-row justify-center">
