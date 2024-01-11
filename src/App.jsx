@@ -5,16 +5,24 @@ import Expertise from "./components/Expertise";
 import Projects from "./components/Projects";
 import WorkExp from "./components/WorkExp";
 import CustomCursor from "./components/Cursor";
+import ContactModal from "./components/ContactModal";
 
 function App() {
+  const [openContactModal, setOpenContactModal] = useState(false);
+  const contactModalHandler = () => {
+    setOpenContactModal(!openContactModal);
+  };
   return (
     <div>
-      <HeaderBar />
+      <HeaderBar contactModalHandler={contactModalHandler} />
       <AboutMe />
       <Expertise />
       <Projects />
       <WorkExp />
       <CustomCursor />
+      {openContactModal && (
+        <ContactModal contactModalHandler={contactModalHandler} />
+      )}
     </div>
   );
 }

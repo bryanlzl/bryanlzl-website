@@ -8,19 +8,21 @@ function AboutMe() {
     mainNameDesc: false,
     mainAboutMe: false,
   });
+
   const mainAboutMeText =
-    "An aspiring software engineer currently pursuing a Master in Computing with keen interest in web technologies, A.I. and automation!";
+    "An aspiring software engineer currently pursuing a Master in Computing with a keen interest in web technologies, A.I., and automation!";
+
   const scrambleStyles = {
-    mainNameDesc: "font-mono text-main-name-desc font-bold tracking-widest",
+    mainNameDesc: "font-mono font-bold tracking-widest text-main-name-desc",
     mainAboutMe:
-      "font-mono text-main-name-sub-desc font-bold w-main-name-sub-desc text-wrap self-center mt-[4vh]",
+      "font-mono font-bold text-main-name-sub-desc text-wrap w-main-name-sub-desc self-center mt-[4vh]",
   };
 
   return (
-    <div className="flex flex-col relative justify-center text-center mt-about-me-top mb-about-me-bottom">
-      <div className="flex flex-col justify-center text-[14.7vw] sm:text-[11.5vw] md:text-[11.5vw] lg:text-[9.5vw] font-bold whitespace-nowrap leading-tight p-5">
-        <h1 className="m-0 p-0 ">BRYAN LIM</h1>
-        <div className="font-mono text-[16%] sm:text-[15%] text-gray-300 font-bold tracking-widest">
+    <div className="flex flex-col justify-center items-center text-center mt-about-me-top mb-about-me-bottom relative">
+      <div className="flex flex-col justify-center items-center font-bold text-[14.7vw] sm:text-[11.5vw] md:text-[11.5vw] lg:text-[9.5vw] whitespace-nowrap leading-tight p-5">
+        <h1 className="m-0 p-0">BRYAN LIM</h1>
+        <div className="font-mono font-bold text-[16%] sm:text-[15%] text-gray-300 tracking-widest">
           <ScrambleText
             textType="mainNameDesc"
             styling={scrambleStyles.mainNameDesc}
@@ -31,9 +33,11 @@ function AboutMe() {
             <span className="m-0 p-0 animate-blink-cursor">_</span>
           )}
         </div>
-        <span className="font-mono text-gray-400 font-bold text-[2.4vw] w-[70vw] sm:text-[1.4vw] md:text-[1.6vw] lg:text-[1.2vw] sm:w-[50vw] md:w-[50vw] lg:w-[40vw] text-wrap self-center mt-[2vw]">
+        <span className="font-mono font-bold text-gray-400 text-[2.4vw] sm:text-[1.4vw] md:text-[1.6vw] lg:text-[1.2vw] text-wrap self-center mt-[2vw] w-[70vw] sm:w-[50vw] md:w-[50vw] lg:w-[40vw]">
           {mainAboutMeText}
-          <span className="m-0 p-0 animate-blink-cursor">_</span>
+          {renderCursor.mainAboutMe && (
+            <span className="m-0 p-0 animate-blink-cursor">_</span>
+          )}
         </span>
       </div>
       <img

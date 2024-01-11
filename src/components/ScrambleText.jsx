@@ -58,7 +58,7 @@ function ScrambleText(props) {
   return (
     <span
       className={` ${
-        isScrambling ? `${"transition duration-500 ease-in-out"}` : ""
+        isScrambling ? "transition duration-500 ease-in-out" : ""
       }`}
     >
       {scrambledText}

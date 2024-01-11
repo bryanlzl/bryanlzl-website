@@ -12,7 +12,7 @@ function WorkExp() {
       company: "DIC Asia Pacific",
       role: "Data Analyst Intern",
       responsibility:
-        "Spearheaded digitalization of procurement processses using Python, PowerBI and SAP, creating impactful insights and enhancing data security with Azure Active Directory. Developed procurement reports that contributed to cost-saving initiatives.",
+        "Spearheaded digitalization of procurement processes using Python, PowerBI, and SAP, creating impactful insights and enhancing data security with Azure Active Directory. Developed procurement reports that contributed to cost-saving initiatives.",
       location: "Singapore",
       startDuration: "Jan 2023",
       endDuration: "Jul 2023",
@@ -24,7 +24,7 @@ function WorkExp() {
       company: "GetGo",
       role: "Software Engineer Intern",
       responsibility:
-        "Developed customer acquisition features on GetGo's main website and front-end of the car management system with React, Svelte and TypeScript.",
+        "Developed customer acquisition features on GetGo's main website and front-end of the car management system with React, Svelte, and TypeScript.",
       location: "Singapore",
       startDuration: "May 2022",
       endDuration: "Aug 2022",

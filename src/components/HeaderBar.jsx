@@ -2,9 +2,9 @@ import React, { useState } from "react";
 import "../styles/index.css";
 import hamburgerIcon from "../assets/icons/hamburger.svg";
 import LeftNavBar from "./LeftNavBar";
-/* eslint-disable react/jsx-no-comment-textnodes */
+import ContactModal from "./ContactModal";
 
-function HeaderBar() {
+function HeaderBar(props) {
   const headerMenu = [
     { id: 1, label: "home" },
     { id: 2, label: "expertise" },
@@ -12,11 +12,16 @@ function HeaderBar() {
     { id: 4, label: "experience" },
     { id: 5, label: "contact" },
   ];
+
+  const contactModalHandler = props.contactModalHandler;
+
   const initialMenuItemsState = {};
   headerMenu.forEach((menuItem) => {
     initialMenuItemsState[menuItem.id] = false;
   });
+
   const [itemSelected, setItemSelected] = useState(initialMenuItemsState);
+
   const highlightHandler = (itemId) => {
     setItemSelected((prev) => {
       return {
@@ -25,11 +30,14 @@ function HeaderBar() {
       };
     });
   };
+
   const anySelected = () => {
     const checker = (element) => element === true;
     return Object.values(itemSelected).some(checker);
   };
+
   const [openSideBar, setOpenSideBar] = useState(false);
+
   const sideBarHandler = () => {
     setOpenSideBar(!openSideBar);
   };
@@ -75,7 +83,10 @@ function HeaderBar() {
                 >
                   {`0${menuItem.id}`}
                 </span>
-                <span className="my-5 mx-5 font-bold cursor-pointer text-nowrap sm:text-[1.6vw] md:text-[1.5vw] lg:text-[1.3vw] xl:text-[1vw]">
+                <span
+                  onClick={menuItem.label === "contact" && contactModalHandler}
+                  className="my-5 mx-5 font-bold cursor-pointer text-nowrap sm:text-[1.6vw] md:text-[1.5vw] lg:text-[1.3vw] xl:text-[1vw]"
+                >
                   {menuItem.label}
                 </span>
               </div>
