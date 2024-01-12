@@ -17,6 +17,7 @@ function HeaderBar(props) {
   const sideBarHandler = props.sideBarHandler;
   const openSideBar = props.openSideBar;
   const initialMenuItemsState = {};
+
   headerMenu.forEach((menuItem) => {
     initialMenuItemsState[menuItem.id] = false;
   });
@@ -48,6 +49,7 @@ function HeaderBar(props) {
     };
 
     window.addEventListener("scroll", handleScroll);
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -56,23 +58,23 @@ function HeaderBar(props) {
   return (
     <header
       className={`font-mono fixed top-0 left-0 w-full z-50 ${
-        isHeaderBackgroundBlack ? "bg-black opacity-65" : ""
+        isHeaderBackgroundBlack ? "bg-black opacity-70" : ""
       }`}
     >
       <div
         className={`flex flex-row ${
-          isHeaderBackgroundBlack | openSideBar ? "hidden" : ""
+          isHeaderBackgroundBlack || openSideBar ? "hidden" : ""
         }`}
       >
         <img
-          className="absolute left-[6vw] top-[38px] w-[4.3vw] block sm:hidden ${
-            
-          "
+          className="absolute left-[6vw] top-[38px] w-[4.3vw] block sm:hidden"
           src={hamburgerIcon}
           onClick={sideBarHandler}
           alt="hamburger-icon"
         />
-        <span className="flex flex-row font-bold absolute left-[60px] top-[30px] text-[5vw] xs:left-[75px] xs:top-[27px] sm:text-[2.5vw] sm:left-[15px] sm:top-[38px] md:text-[2.5vw] lg:text-[1.7vw] xl:left-[38px] xl:top-[38px] cursor-pointer ">
+        <span
+          className={`flex flex-row font-bold absolute left-[60px] top-[30px] text-[5vw] xs:left-[75px] xs:top-[27px] sm:text-[2.5vw] sm:left-[15px] sm:top-[38px] md:text-[2.5vw] lg:text-[1.7vw] xl:left-[38px] xl:top-[38px] cursor-pointer `}
+        >
           <p className="text-blue-300">Bryan_Lim</p>
           <p className="text-white">.</p>
           <p className="text-green-500">_</p>
@@ -111,7 +113,9 @@ function HeaderBar(props) {
                   onClick={() => {
                     menuItem.label === "contact" && contactModalHandler();
                   }}
-                  className="my-5 mx-5 font-bold cursor-pointer text-nowrap sm:text-[1.6vw] md:text-[1.5vw] lg:text-[1.3vw] xl:text-[1vw]"
+                  className={`my-5 mx-5 font-bold cursor-pointer text-nowrap sm:text-[1.6vw] md:text-[1.5vw] lg:text-[1.3vw] xl:text-[1vw] ${
+                    menuItem.label === "contact" && "animate-pulse"
+                  }`}
                 >
                   {menuItem.label}
                 </span>

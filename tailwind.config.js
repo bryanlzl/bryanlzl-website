@@ -19,10 +19,6 @@ export default {
         "menu-item": "1vw",
         "menu-item-id": "0.7vw",
       },
-      margin: {
-        "about-me-top": "20vh",
-        "about-me-bottom": "40vh",
-      },
       height: {
         "main-name": "205px",
         "exp-box-h": "333px",
@@ -38,6 +34,8 @@ export default {
         "exp-x": "30px",
         "exp-top": "5vh",
         "exp-bottom": "30vh",
+        "about-me-top": "24vh",
+        "about-me-bottom": "36vh",
       },
       borderWidth: {
         "exp-box": "3px",
@@ -50,7 +48,6 @@ export default {
         "exp-label-2":
           "linear-gradient(rgba(36, 36, 36, 0.6) 65%, #ff5700 55%)",
       },
-      backgroundColor: { "custom-cursor": "#5a1a9a" },
       keyframes: {
         "project-pulse": {
           "0%, 100%": {
