@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/index.css";
 import hamburgerIcon from "../assets/icons/hamburger.svg";
 import LeftNavBar from "./LeftNavBar";
@@ -14,13 +14,15 @@ function HeaderBar(props) {
   ];
 
   const contactModalHandler = props.contactModalHandler;
-
+  const sideBarHandler = props.sideBarHandler;
+  const openSideBar = props.openSideBar;
   const initialMenuItemsState = {};
   headerMenu.forEach((menuItem) => {
     initialMenuItemsState[menuItem.id] = false;
   });
 
   const [itemSelected, setItemSelected] = useState(initialMenuItemsState);
+  const [isHeaderBackgroundBlack, setIsHeaderBackgroundBlack] = useState(false);
 
   const highlightHandler = (itemId) => {
     setItemSelected((prev) => {
@@ -36,18 +38,36 @@ function HeaderBar(props) {
     return Object.values(itemSelected).some(checker);
   };
 
-  const [openSideBar, setOpenSideBar] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 0) {
+        setIsHeaderBackgroundBlack(true);
+      } else {
+        setIsHeaderBackgroundBlack(false);
+      }
+    };
 
-  const sideBarHandler = () => {
-    setOpenSideBar(!openSideBar);
-  };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <div className="font-mono">
-      {openSideBar && <LeftNavBar sideBarHandler={sideBarHandler} />}
-      <div className="flex flex-row">
+    <header
+      className={`font-mono fixed top-0 left-0 w-full z-50 ${
+        isHeaderBackgroundBlack ? "bg-black opacity-65" : ""
+      }`}
+    >
+      <div
+        className={`flex flex-row ${
+          isHeaderBackgroundBlack | openSideBar ? "hidden" : ""
+        }`}
+      >
         <img
-          className="absolute left-[6vw] top-[38px] w-[4.3vw] block sm:hidden"
+          className="absolute left-[6vw] top-[38px] w-[4.3vw] block sm:hidden ${
+            
+          "
           src={hamburgerIcon}
           onClick={sideBarHandler}
           alt="hamburger-icon"
@@ -59,7 +79,11 @@ function HeaderBar(props) {
         </span>
       </div>
       <div className="hidden sm:block">
-        <div className="flex flex-row justify-center mx-4 mt-7">
+        <div
+          className={`flex flex-row justify-center mx-4 mt-7 ${
+            isHeaderBackgroundBlack ? "mt-[5px]" : ""
+          }`}
+        >
           <div className="flex flex-row justify-between max-w-full bg-transparent text-gray-50">
             {headerMenu.map((menuItem, index) => (
               <div
@@ -84,7 +108,9 @@ function HeaderBar(props) {
                   {`0${menuItem.id}`}
                 </span>
                 <span
-                  onClick={menuItem.label === "contact" && contactModalHandler}
+                  onClick={() => {
+                    menuItem.label === "contact" && contactModalHandler();
+                  }}
                   className="my-5 mx-5 font-bold cursor-pointer text-nowrap sm:text-[1.6vw] md:text-[1.5vw] lg:text-[1.3vw] xl:text-[1vw]"
                 >
                   {menuItem.label}
@@ -94,7 +120,7 @@ function HeaderBar(props) {
           </div>
         </div>
       </div>
-    </div>
+    </header>
   );
 }
 

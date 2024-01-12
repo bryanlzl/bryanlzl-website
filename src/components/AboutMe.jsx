@@ -8,10 +8,8 @@ function AboutMe() {
     mainNameDesc: false,
     mainAboutMe: false,
   });
-
   const mainAboutMeText =
     "An aspiring software engineer currently pursuing a Master in Computing with a keen interest in web technologies, A.I., and automation!";
-
   const scrambleStyles = {
     mainNameDesc: "font-mono font-bold tracking-widest text-main-name-desc",
     mainAboutMe:
@@ -35,9 +33,7 @@ function AboutMe() {
         </div>
         <span className="font-mono font-bold text-gray-400 text-[2.4vw] sm:text-[1.4vw] md:text-[1.6vw] lg:text-[1.2vw] text-wrap self-center mt-[2vw] w-[70vw] sm:w-[50vw] md:w-[50vw] lg:w-[40vw]">
           {mainAboutMeText}
-          {renderCursor.mainAboutMe && (
-            <span className="m-0 p-0 animate-blink-cursor">_</span>
-          )}
+          <span className="m-0 p-0 animate-blink-cursor">_</span>
         </span>
       </div>
       <img
