@@ -51,7 +51,7 @@ const Contact = React.forwardRef(function MyInput(props, ref) {
   return (
     <div
       ref={ref}
-      className="relative flex flex-col h-auto text-center pt-10 md:pt-20 lg:pt-24 pb-[30vw] xs:pb-[20vw] lg:pb-[10vw]"
+      className="relative flex flex-col h-auto text-center pt-10 md:pt-20 lg:pt-24 pb-[30vw] xs:pb-[20vw] lg:pb-[10vw] tracking-[-0.06em]"
     >
       <div className="flex flex-row justify-center" ref={contactRef}>
         <div className="flex flex-col items-center w-full md:w-3/4 lg:w-1/2">
