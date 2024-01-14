@@ -6,9 +6,19 @@ function DrawerNavigation(props) {
   const headerMenu = props.headerMenu;
   const handleClick = props.handleClick;
 
+  const preventClose = (e) => {
+    e.stopPropagation();
+  };
+
   return (
-    <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-80 z-100">
-      <div className="block sm:hidden bg-gray-800 text-white w-64 h-full fixed top-0 left-0 overflow-y-auto z-10">
+    <div
+      className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-80 z-100"
+      onClick={sideBarHandler}
+    >
+      <div
+        className="block sm:hidden bg-gray-800 text-white w-64 h-full fixed top-0 left-0 overflow-y-auto z-10"
+        onClick={preventClose}
+      >
         <div
           className="flex justify-center p-5 border-b-2 border-gray-400"
           onClick={sideBarHandler}

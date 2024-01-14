@@ -63,7 +63,7 @@ function HeaderBar(props) {
         }`}
       >
         <img
-          className="absolute left-[6vw] top-[38px] w-[4.3vw] block sm:hidden"
+          className={`absolute left-[6vw] top-[38px] w-[4.3vw] block sm:hidden`}
           src={hamburgerIcon}
           onClick={sideBarHandler}
           alt="hamburger-icon"
