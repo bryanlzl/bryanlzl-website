@@ -53,7 +53,7 @@ const AboutMe = React.forwardRef(function MyInput(props, ref) {
         className="flex flex-col justify-center items-center text-center pt-about-me-top pb-about-me-bottom relative"
         ref={contactRef}
       >
-        <div className="flex flex-col justify-center items-center font-bold text-[14.7vw] sm:text-[11.5vw] md:text-[11.5vw] lg:text-[9.5vw] whitespace-nowrap leading-tight p-5">
+        <div className="flex flex-col justify-center items-center font-bold text-[14.7vw] sm:text-[11.5vw] md:text-[11.5vw] lg:text-[9.5vw] leading-tight p-5">
           <h1 className="m-0 p-0">BRYAN LIM</h1>
           <div className="font-mono font-bold text-[16%] sm:text-[15%] text-gray-300 tracking-widest">
             {scramble ? (
@@ -70,7 +70,7 @@ const AboutMe = React.forwardRef(function MyInput(props, ref) {
               <span className="m-0 p-0 animate-blink-cursor">_</span>
             )}
           </div>
-          <span className="font-mono bg-[#1e1f21] rounded-md py-2 opacity-65 text-gray-200 text-[2.4vw] sm:text-[1.4vw] md:text-[1.6vw] lg:text-[1.2vw] text-wrap self-center mt-[2vw] w-[70vw] sm:w-[50vw] md:w-[50vw] lg:w-[40vw]">
+          <span className="font-mono bg-[#1e1f21] rounded-md py-2 opacity-65 text-gray-200 text-[2.4vw] sm:text-[1.4vw] md:text-[1.6vw] lg:text-[1.2vw] self-center mt-[2vw] w-[70vw] sm:w-[50vw] md:w-[50vw] lg:w-[40vw] whitespace-normal break-words">
             {mainAboutMeText}
             <span className="m-0 p-0 animate-blink-cursor">_</span>
           </span>

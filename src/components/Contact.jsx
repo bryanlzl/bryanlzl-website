@@ -93,7 +93,7 @@ const Contact = React.forwardRef(function MyInput(props, ref) {
             </p>
             <div className="font-mono font-bold text-lg md:text-xl lg:text-2xl text-gray-200">
               <h1 className="inline-block relative">
-                <p className="whitespace-nowrap leading-none relative z-10">
+                <p className="whitespace-normal break-words leading-none relative z-10">
                   Let's link up!
                 </p>
                 <span className="absolute bg-[#108500] top-1/2 left-0 w-full h-1/2 z-0"></span>
