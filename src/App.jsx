@@ -49,7 +49,7 @@ function App() {
       <Projects ref={refList.projects} />
       <WorkExp ref={refList.workexp} />
       <Contact ref={refList.contact} />
-
+      <CustomCursor />
       {openSideBar && (
         <LeftNavBar
           sideBarHandler={sideBarHandler}
