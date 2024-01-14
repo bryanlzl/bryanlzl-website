@@ -69,7 +69,7 @@ function HeaderBar(props) {
           alt="hamburger-icon"
         />
         <span
-          className={`flex flex-row font-bold absolute left-[60px] top-[30px] text-[5vw] xs:left-[75px] xs:top-[27px] sm:text-[2.5vw] sm:left-[15px] sm:top-[38px] md:text-[2.5vw] lg:text-[1.7vw] xl:left-[38px] xl:top-[38px] cursor-pointer `}
+          className={`flex flex-row font-bold absolute left-[70px] top-[29px] text-[5vw] xs:left-[85px] xs:top-[27px] sm:text-[2.5vw] sm:left-[21px] sm:top-[40px] md:left-[24px] md:top-[42px] md:text-[2.3vw] lg:left-[24px] lg:top-[42px] lg:text-[1.7vw] xl:left-[3vw] xl:top-[38px] cursor-pointer `}
         >
           <p>{`0x`}</p>
           <p className="text-blue-300">Bryan</p>
