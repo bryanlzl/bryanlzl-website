@@ -8,7 +8,7 @@ import NSMenLife3Img from "../assets/projects/NSMen-life-3.png";
 import InSTATgramImg from "../assets/projects/InSTATgram.jpg";
 import chessImg from "../assets/projects/chess.png";
 
-function Projects() {
+const Projects = React.forwardRef(function MyInput(props, ref) {
   const [renderInfo, setRenderInfo] = useState({ project: 0, rendered: false });
 
   const renderHandler = (projectId) => {
@@ -26,10 +26,10 @@ function Projects() {
   const expertiseContent = [
     {
       id: 1,
-      label: "To-do List Maker",
+      label: "Task Manager",
       year: 2023,
       content:
-        "A user-friendly to-do list maker (tasker) for users to create, edit and delete tasks.",
+        "A user-friendly task manager (tasker) to create, edit and delete tasks with an intuitive user-interface.",
       technology: ["React", "Express", "PostgreSQL"],
       imageStyle: "",
       images: [taskMakerImg],
@@ -77,7 +77,10 @@ function Projects() {
   ];
 
   return (
-    <div className="flex flex-col justify-center items-center text-center pt-exp-top pb-exp-bottom">
+    <div
+      className="flex flex-col justify-center items-center text-center pt-exp-top pb-exp-bottom"
+      ref={ref}
+    >
       <div className="font-bold text-expertise-title">
         <h2 className="m-0 p-0">Projects</h2>
       </div>
@@ -138,6 +141,6 @@ function Projects() {
       </div>
     </div>
   );
-}
+});
 
 export default Projects;

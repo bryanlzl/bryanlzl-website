@@ -1,43 +1,40 @@
-import React, { useState } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import HeaderBar from "./components/HeaderBar";
 import AboutMe from "./components/AboutMe";
 import Expertise from "./components/Expertise";
 import Projects from "./components/Projects";
 import WorkExp from "./components/WorkExp";
+import Contact from "./components/Contact";
 import CustomCursor from "./components/Cursor";
-import ContactModal from "./components/ContactModal";
 import LeftNavBar from "./components/LeftNavBar";
 
 function App() {
-  const [openContactModal, setOpenContactModal] = useState(false);
   const [openSideBar, setOpenSideBar] = useState(false);
-  const contactModalHandler = () => {
-    setOpenContactModal(!openContactModal);
-  };
   const sideBarHandler = () => {
     setOpenSideBar(!openSideBar);
   };
+  const refList = {
+    aboutme: useRef(null),
+    expertise: useRef(null),
+    projects: useRef(null),
+    workexp: useRef(null),
+    contact: useRef(null),
+  };
+
   return (
     <div>
       <HeaderBar
-        contactModalHandler={contactModalHandler}
         sideBarHandler={sideBarHandler}
         openSideBar={openSideBar}
+        refList={refList}
       />
-      <AboutMe />
-      <Expertise />
-      <Projects />
-      <WorkExp />
+      <AboutMe ref={refList.aboutme} refList={refList} />
+      <Expertise ref={refList.expertise} />
+      <Projects ref={refList.projects} />
+      <WorkExp ref={refList.workexp} />
+      <Contact ref={refList.contact} />
       <CustomCursor />
-      {openSideBar && (
-        <LeftNavBar
-          sideBarHandler={sideBarHandler}
-          contactModalHandler={contactModalHandler}
-        />
-      )}
-      {openContactModal && (
-        <ContactModal contactModalHandler={contactModalHandler} />
-      )}
+      {openSideBar && <LeftNavBar sideBarHandler={sideBarHandler} />}
     </div>
   );
 }

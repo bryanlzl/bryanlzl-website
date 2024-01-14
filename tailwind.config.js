@@ -32,8 +32,8 @@ export default {
       padding: {
         "exp-y": "40px",
         "exp-x": "30px",
-        "exp-top": "5vh",
-        "exp-bottom": "30vh",
+        "exp-top": "8vh",
+        "exp-bottom": "20vh",
         "about-me-top": "24vh",
         "about-me-bottom": "36vh",
       },
@@ -47,6 +47,9 @@ export default {
           "linear-gradient(rgba(36, 36, 36, 0.6) 65%, #cc00ff 55%)",
         "exp-label-2":
           "linear-gradient(rgba(36, 36, 36, 0.6) 65%, #ff5700 55%)",
+      },
+      blur: {
+        smooth: "blur(2px)",
       },
       keyframes: {
         "project-pulse": {
@@ -68,14 +71,25 @@ export default {
           "0%, 100%": { opacity: 0 },
           "50%": { opacity: 1 },
         },
+        "pulse-glow": {
+          "0%, 100%": {
+            textShadow:
+              "0 0 5px , 0 0 10px rgba(49,105,155, 0.5), 0 0 15px rgba(49,105,155, 0.5)",
+          },
+          "50%": {
+            textShadow:
+              "0 0 5px rgba(49,105,155, 0.7), 0 0 12px rgba(49,105,155, 0.7), 0 0 20px rgba(49,105,155, 0.7)",
+          },
+        },
       },
       screens: {
         xs: "500px",
       },
       animation: {
         "project-pulse": "project-pulse 2.5s ease-in-out infinite",
-        "arrow-down-bounce": "arrow-down-bounce 2s infinite",
-        "blink-cursor": "blink-cursor 1s infinite",
+        "arrow-down-bounce": "arrow-down-bounce 5s infinite",
+        "blink-cursor": "blink-cursor 1.5s infinite",
+        "pulse-glow": "pulse-glow 2s linear infinite",
       },
     },
   },

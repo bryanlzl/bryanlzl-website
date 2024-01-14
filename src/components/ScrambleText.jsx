@@ -5,6 +5,7 @@ function ScrambleText(props) {
   const setRenderCursor = props.setRenderCursor;
   const textType = props.textType;
   const textToScramble = props.textToScramble;
+  const charCase = props.charCase;
 
   const [scrambledText, setScrambledText] = useState("");
   const [isScrambling, setIsScrambling] = useState(true);
@@ -20,9 +21,10 @@ function ScrambleText(props) {
         if (originalText[currentIndex] !== " ") {
           let scrambleLength = originalText.length - currentIndex;
           let randomString = "";
+          const startingVal = charCase === "upper" ? 65 : 97;
           for (let i = 0; i < scrambleLength; i++) {
             randomString += String.fromCharCode(
-              Math.floor(Math.random() * 26) + 65
+              Math.floor(Math.random() * 26) + startingVal
             );
           }
           const newText =
@@ -34,7 +36,7 @@ function ScrambleText(props) {
             currentIndex++;
             counter = 0;
           }
-          animationInterval = setTimeout(scrambleText, 30);
+          animationInterval = setTimeout(scrambleText, 20);
         } else {
           currentIndex++;
           animationInterval = setTimeout(scrambleText, 0);
@@ -57,9 +59,9 @@ function ScrambleText(props) {
 
   return (
     <span
-      className={` ${
+      className={`${
         isScrambling ? "transition duration-500 ease-in-out" : ""
-      }`}
+      } ${isScrambling ? "text-opacity-75 blur-smooth" : ""}`}
     >
       {scrambledText}
     </span>

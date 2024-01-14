@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useInView } from "react-intersection-observer";
 import "../styles/index.css";
 import triangleDownIcon from "../assets/icons/triangle-down-no-fill.svg";
 import ScrambleText from "./ScrambleText";
 // import CodeEditor from "../components/CodeEditorBackground";
 // import BouncingSquare from "./BouncingSquare";
 
-function AboutMe() {
+const AboutMe = React.forwardRef(function MyInput(props, ref) {
   const [renderCursor, setRenderCursor] = useState({
     mainNameDesc: false,
     mainAboutMe: false,
@@ -20,10 +21,30 @@ function AboutMe() {
       "font-mono font-bold text-main-name-sub-desc text-wrap w-main-name-sub-desc self-center mt-[4vh]",
   };
 
+  const refList = props.refList;
+
+  const handleClick = (code) => {
+    if (refList[code] && refList[code].current) {
+      refList[code].current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const [contactRef = ref, inView] = useInView({
+    threshold: 0.1, // Adjust the threshold as needed
+  });
+
+  const [scramble, setScramble] = useState(false);
+
+  useEffect(() => {
+    "asdasd";
+    inView ? setScramble(true) : setScramble(false);
+  }, [inView]);
+
   return (
     <div
       id="aboutMe"
       className="relative bg-[url('../assets/background/about-me-bg.png')] bg-center bg-no-repeat bg-cover h-screen flex justify-center items-center"
+      ref={ref}
     >
       {/* <CodeEditor /> */}
       {/* <BouncingSquare boundingBoxId="aboutMe" /> */}
@@ -34,16 +55,23 @@ function AboutMe() {
         </div>
       </div>
 
-      <div className="flex flex-col justify-center items-center text-center pt-about-me-top pb-about-me-bottom relative">
+      <div
+        className="flex flex-col justify-center items-center text-center pt-about-me-top pb-about-me-bottom relative"
+        ref={contactRef}
+      >
         <div className="flex flex-col justify-center items-center font-bold text-[14.7vw] sm:text-[11.5vw] md:text-[11.5vw] lg:text-[9.5vw] whitespace-nowrap leading-tight p-5">
           <h1 className="m-0 p-0">BRYAN LIM</h1>
           <div className="font-mono font-bold text-[16%] sm:text-[15%] text-gray-300 tracking-widest">
-            <ScrambleText
-              textType="mainNameDesc"
-              styling={scrambleStyles.mainNameDesc}
-              setRenderCursor={setRenderCursor}
-              textToScramble={"SOFTWARE ENGINEER / WEB DEVELOPER / TINKERER"}
-            />
+            {scramble ? (
+              <ScrambleText
+                textType="mainNameDesc"
+                charCase="upper"
+                setRenderCursor={setRenderCursor}
+                textToScramble={"SOFTWARE ENGINEER / WEB DEVELOPER / TINKERER"}
+              />
+            ) : (
+              "SOFTWARE ENGINEER / WEB DEVELOPER / TINKERER"
+            )}
             {renderCursor.mainNameDesc && (
               <span className="m-0 p-0 animate-blink-cursor">_</span>
             )}
@@ -56,11 +84,12 @@ function AboutMe() {
         <img
           src={triangleDownIcon}
           alt="downChevronIcon"
-          className="absolute h-[1.3em] w-auto self-center bottom-[7em] animate-arrow-down-bounce"
+          className="absolute cursor-pointer h-[1.3em] w-auto self-center bottom-[7em] animate-arrow-down-bounce"
+          onClick={() => handleClick("expertise")}
         />
       </div>
     </div>
   );
-}
+});
 
 export default AboutMe;

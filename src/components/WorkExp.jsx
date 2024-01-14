@@ -5,7 +5,7 @@ import chevronDown from "../assets/icons/chevron-down.svg";
 import locationPinIcon from "../assets/icons/location-pin.svg";
 import "../styles/index.css";
 
-function WorkExp() {
+const WorkExp = React.forwardRef(function MyInput(props, ref) {
   const workExpContent = [
     {
       id: 1,
@@ -47,7 +47,7 @@ function WorkExp() {
   };
 
   return (
-    <div className="flex flex-col text-center mb-40">
+    <div className="flex flex-col text-center pt-[10vh] mb-[15dvh]" ref={ref}>
       <div className="font-bold text-exp-title mb-[2.8vh]">
         <h2 className="m-0 p-0 self-center">Experience</h2>
       </div>
@@ -110,6 +110,6 @@ function WorkExp() {
       ))}
     </div>
   );
-}
+});
 
 export default WorkExp;

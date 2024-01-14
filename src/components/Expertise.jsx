@@ -1,9 +1,10 @@
+import React, { forwardRef } from "react";
 import "../styles/index.css";
 import pcScreenIcon from "../assets/icons/pc-screen-icon.svg";
 import reactLogoIcon from "../assets/icons/react-logo-icon.svg";
 import gearIcon from "../assets/icons/gear-icon.svg";
 
-function Expertise() {
+const Expertise = React.forwardRef(function MyInput(props, ref) {
   const expertiseContent = [
     {
       id: 0,
@@ -35,7 +36,10 @@ function Expertise() {
   ];
 
   return (
-    <div className="flex flex-col justify-center text-center pt-exp-top pb-exp-bottom">
+    <div
+      className="flex flex-col justify-center text-center pt-exp-top pb-exp-bottom"
+      ref={ref}
+    >
       <div className="font-bold text-expertise-title mb-[2.8vh]">
         <h2 className="m-0 p-0">Expertise</h2>
       </div>
@@ -76,6 +80,6 @@ function Expertise() {
       </div>
     </div>
   );
-}
+});
 
 export default Expertise;
