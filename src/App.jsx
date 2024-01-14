@@ -21,12 +21,28 @@ function App() {
     contact: useRef(null),
   };
 
+  const headerMenu = [
+    { id: 1, label: "Home", code: "aboutme" },
+    { id: 2, label: "Expertise", code: "expertise" },
+    { id: 3, label: "Projects", code: "projects" },
+    { id: 4, label: "Experience", code: "workexp" },
+    { id: 5, label: "Contact", code: "contact" },
+  ];
+
+  const handleClick = (code) => {
+    if (refList[code] && refList[code].current) {
+      refList[code].current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <div>
       <HeaderBar
         sideBarHandler={sideBarHandler}
+        headerMenu={headerMenu}
         openSideBar={openSideBar}
         refList={refList}
+        handleClick={handleClick}
       />
       <AboutMe ref={refList.aboutme} refList={refList} />
       <Expertise ref={refList.expertise} />
@@ -34,7 +50,13 @@ function App() {
       <WorkExp ref={refList.workexp} />
       <Contact ref={refList.contact} />
       <CustomCursor />
-      {openSideBar && <LeftNavBar sideBarHandler={sideBarHandler} />}
+      {openSideBar && (
+        <LeftNavBar
+          sideBarHandler={sideBarHandler}
+          headerMenu={headerMenu}
+          handleClick={handleClick}
+        />
+      )}
     </div>
   );
 }

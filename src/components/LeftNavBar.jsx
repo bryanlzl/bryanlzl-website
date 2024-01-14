@@ -3,7 +3,8 @@ import closeNavBarIcon from "../assets/icons/close-nav-bar.svg";
 
 function DrawerNavigation(props) {
   const sideBarHandler = props.sideBarHandler;
-  const contactModalHandler = props.contactModalHandler;
+  const headerMenu = props.headerMenu;
+  const handleClick = props.handleClick;
 
   return (
     <div className="fixed top-0 left-0 w-full h-full flex items-center justify-center bg-black bg-opacity-80 z-100">
@@ -15,37 +16,18 @@ function DrawerNavigation(props) {
           <img className="w-4" src={closeNavBarIcon} alt="close-nav-bar-icon" />
         </div>
         <nav className="p-4 space-y-4 ">
-          <a
-            href="#"
-            className="text-white hover:bg-gray-700 hover:text-yellow-300 px-4 py-2 rounded-lg block transition-colors"
-          >
-            Home
-          </a>
-          <a
-            href="#"
-            className="text-white hover:bg-gray-700 hover:text-yellow-300 px-4 py-2 rounded-lg block transition-colors"
-          >
-            Expertise
-          </a>
-          <a
-            href="#"
-            className="text-white hover:bg-gray-700 hover:text-yellow-300 px-4 py-2 rounded-lg block transition-colors"
-          >
-            Projects
-          </a>
-          <a
-            href="#"
-            className="text-white hover:bg-gray-700 hover:text-yellow-300 px-4 py-2 rounded-lg block transition-colors"
-          >
-            Experience
-          </a>
-          <a
-            href="#"
-            className="text-white hover:bg-gray-700 hover:text-yellow-300 px-4 py-2 rounded-lg block transition-colors"
-            onClick={contactModalHandler}
-          >
-            Contact
-          </a>
+          {headerMenu.map((menuItem) => (
+            <a
+              key={menuItem.id}
+              className="text-white hover:bg-gray-700 hover:text-yellow-300 px-4 py-2 rounded-lg block transition-colors"
+              onClick={() => {
+                sideBarHandler();
+                handleClick(menuItem.code);
+              }}
+            >
+              {menuItem.label}
+            </a>
+          ))}
         </nav>
       </div>{" "}
     </div>

@@ -8,9 +8,24 @@ import ScrambleText from "./ScrambleText";
 
 const Contact = React.forwardRef(function MyInput(props, ref) {
   const contactItems = [
-    { id: 1, title: "LinkedIn", icon: linkedinLogo },
-    { id: 2, title: "GitHub", icon: githubLogo },
-    { id: 3, title: "Email", icon: emailIcon },
+    {
+      id: 1,
+      title: "LinkedIn",
+      icon: linkedinLogo,
+      link: "https://www.linkedin.com/in/bryanlimzhenlun/",
+    },
+    {
+      id: 2,
+      title: "GitHub",
+      icon: githubLogo,
+      link: "https://github.com/bryanlzl",
+    },
+    {
+      id: 3,
+      title: "Email",
+      icon: emailIcon,
+      link: "mailto:zhenlun.bryan@gmail.com",
+    },
   ];
 
   const textContent = {
@@ -89,7 +104,9 @@ const Contact = React.forwardRef(function MyInput(props, ref) {
             {contactItems.map((item) => (
               <a
                 key={item.id}
-                href="#"
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
                 className={`
                   flex flex-row justify-center items-center p-2 
                   text-white rounded-lg hover:bg-gray-400 hover:text-gray-800

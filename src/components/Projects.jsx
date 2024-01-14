@@ -2,11 +2,10 @@ import React, { useState } from "react";
 import "../styles/index.css";
 import taskMakerImg from "../assets/projects/task-maker-project.png";
 import currencySwapImg from "../assets/projects/currency-swap-project.png";
-import NSMenLife1Img from "../assets/projects/NSMen-life-1.png";
-import NSMenLife2Img from "../assets/projects/NSMen-life-2.png";
-import NSMenLife3Img from "../assets/projects/NSMen-life-3.png";
+import NSMenLifeImg from "../assets/projects/NSMen-life.jpg";
 import InSTATgramImg from "../assets/projects/InSTATgram.jpg";
 import chessImg from "../assets/projects/chess.png";
+import EdusysImg from "../assets/projects/Edusys.png";
 
 const Projects = React.forwardRef(function MyInput(props, ref) {
   const [renderInfo, setRenderInfo] = useState({ project: 0, rendered: false });
@@ -20,7 +19,7 @@ const Projects = React.forwardRef(function MyInput(props, ref) {
   const renderTransition = (renderInfo, currId) => {
     return renderInfo.project === currId && renderInfo.rendered
       ? "opacity-100 translate-y-0 transition-opacity duration-500"
-      : "opacity-0 translate-y-0 transition-opacity duration-500";
+      : "opacity-20 translate-y-0 transition-opacity duration-500";
   };
 
   const expertiseContent = [
@@ -33,6 +32,7 @@ const Projects = React.forwardRef(function MyInput(props, ref) {
       technology: ["React", "Express", "PostgreSQL"],
       imageStyle: "",
       images: [taskMakerImg],
+      link: "https://github.com/bryanlzl/react-tasker",
     },
     {
       id: 2,
@@ -43,19 +43,10 @@ const Projects = React.forwardRef(function MyInput(props, ref) {
       technology: ["React", "Material UI"],
       imageStyle: "",
       images: [currencySwapImg],
+      link: "https://github.com/bryanlzl/currency-swap-form",
     },
     {
       id: 3,
-      label: "NSMen Life",
-      year: 2022,
-      content:
-        "NSMen Life is a one-stop mobile application that allows reservists (NSmen) to settle administrative matters and set fitness goals.",
-      technology: ["React Native", "Expo", "Figma"],
-      imageStyle: "w-1/3",
-      images: [NSMenLife1Img, NSMenLife2Img, NSMenLife3Img],
-    },
-    {
-      id: 4,
       label: "InSTATgram",
       year: 2023,
       content:
@@ -63,9 +54,32 @@ const Projects = React.forwardRef(function MyInput(props, ref) {
       technology: ["UIPath", "PowerBI"],
       imageStyle: "",
       images: [InSTATgramImg],
+      link: "https://github.com/bryanlzl/InSTATgram",
+    },
+    {
+      id: 4,
+      label: "NSMen Life",
+      year: 2022,
+      content:
+        "NSMen Life is a one-stop mobile application that allows reservists (NSmen) to settle administrative matters and set fitness goals.",
+      technology: ["React Native", "Expo", "Figma"],
+      imageStyle: "",
+      images: [NSMenLifeImg],
+      link: "https://github.com/bryanlzl/AlphaGeeks-NSmen-Life-App",
     },
     {
       id: 5,
+      label: "EduSYS Learn",
+      year: 2021,
+      content:
+        "Empowering students to a wide variety and array of educational resources powered by Telegram Bot",
+      technology: ["Python", "Telegram Bot"],
+      imageStyle: "",
+      images: [EdusysImg],
+      link: "https://github.com/bryanlzl/EduSYS-learning-platform",
+    },
+    {
+      id: 6,
       label: "Chess",
       year: 2020,
       content:
@@ -73,6 +87,7 @@ const Projects = React.forwardRef(function MyInput(props, ref) {
       technology: ["Python", "PyGame"],
       imageStyle: "",
       images: [chessImg],
+      link: "https://github.com/bryanlzl/chess-without-chess-libraries",
     },
   ];
 
@@ -102,35 +117,40 @@ const Projects = React.forwardRef(function MyInput(props, ref) {
             <h2 className="block text-[1.2em] text-start font-bold p-1">
               {item.label}
             </h2>
-            <span className="flex flex-row relative items-start w-auto max-w-lg items-center">
+            <a
+              href={item.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex flex-row relative items-start w-auto max-w-lg items-center"
+            >
+              <span
+                className={
+                  "absolute inset-0 max-w-xl p-auto bg-gray-900 opacity-75 "
+                }
+              />
+              <span
+                className={
+                  "absolute flex flex-col max-w-xl p-auto font-mono text-[2.vh] opacity-100 "
+                }
+              >
+                <p className="sm:text-[2vmin] overflow-auto">{item.content}</p>
+              </span>
               {item.images.map((projectImage, idx) => (
                 <img
-                  className={item.imageStyle}
+                  className={
+                    item.imageStyle + renderTransition(renderInfo, item.id)
+                  }
                   key={idx}
                   src={projectImage}
                   alt={`${item.label}Img${idx}`}
                 />
               ))}
-              <span
-                className={
-                  "absolute inset-0 max-w-xl p-auto bg-gray-900 opacity-0 " +
-                  renderTransition(renderInfo, item.id)
-                }
-              />
-              <span
-                className={
-                  "absolute flex flex-col max-w-xl p-auto font-mono text-[2.vh] opacity-0 " +
-                  renderTransition(renderInfo, item.id)
-                }
-              >
-                <p className="sm:text-[2vmin] overflow-auto">{item.content}</p>
-              </span>
-            </span>
+            </a>
             <span className="flex flex-row justify-center">
               {item.technology.map((tech, techId) => (
                 <div
                   key={techId}
-                  className="mt-2 mx-2 p-1 border border-[2px] border-purple-500 radius-4 rounded"
+                  className="my-1 mx-2 p-1 border border-[2px] border-purple-500 radius-4 rounded"
                 >
                   {tech}
                 </div>

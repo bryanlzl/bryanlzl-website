@@ -6,15 +6,7 @@ import hamburgerIcon from "../assets/icons/hamburger.svg";
 
 function HeaderBar(props) {
   const refList = props.refList;
-
-  const headerMenu = [
-    { id: 1, label: "home", code: "aboutme" },
-    { id: 2, label: "expertise", code: "expertise" },
-    { id: 3, label: "projects", code: "projects" },
-    { id: 4, label: "experience", code: "workexp" },
-    { id: 5, label: "contact", code: "contact" },
-  ];
-
+  const headerMenu = props.headerMenu;
   const contactModalHandler = props.contactModalHandler;
   const sideBarHandler = props.sideBarHandler;
   const openSideBar = props.openSideBar;
@@ -24,11 +16,7 @@ function HeaderBar(props) {
     initialMenuItemsState[menuItem.id] = false;
   });
 
-  const handleClick = (code) => {
-    if (refList[code] && refList[code].current) {
-      refList[code].current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  const handleClick = props.handleClick;
 
   const [itemSelected, setItemSelected] = useState(initialMenuItemsState);
   const [isHeaderBackgroundBlack, setIsHeaderBackgroundBlack] = useState(false);
@@ -83,9 +71,8 @@ function HeaderBar(props) {
         <span
           className={`flex flex-row font-bold absolute left-[60px] top-[30px] text-[5vw] xs:left-[75px] xs:top-[27px] sm:text-[2.5vw] sm:left-[15px] sm:top-[38px] md:text-[2.5vw] lg:text-[1.7vw] xl:left-[38px] xl:top-[38px] cursor-pointer `}
         >
-          <p className="text-blue-300">{`<`}</p>
-          <p className="text-green-500">Bryan</p>
-          <p className="text-blue-300">{`/>`}</p>
+          <p>{`0x`}</p>
+          <p className="text-blue-300">Bryan</p>
         </span>
       </div>
       <div className="hidden sm:block">

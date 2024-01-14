@@ -15,12 +15,6 @@ const AboutMe = React.forwardRef(function MyInput(props, ref) {
   const mainAboutMeText =
     "An aspiring software engineer currently pursuing a Master in Computing with a keen interest in web technologies, A.I., and automation!";
 
-  const scrambleStyles = {
-    mainNameDesc: "font-mono font-bold tracking-widest text-main-name-desc",
-    mainAboutMe:
-      "font-mono font-bold text-main-name-sub-desc text-wrap w-main-name-sub-desc self-center mt-[4vh]",
-  };
-
   const refList = props.refList;
 
   const handleClick = (code) => {
