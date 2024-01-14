@@ -44,7 +44,7 @@ const AboutMe = React.forwardRef(function MyInput(props, ref) {
       {/* <BouncingSquare boundingBoxId="aboutMe" /> */}
 
       <div className="absolute left-[72vw] top-[42.5dvh] xs:left-[68dvw] xs:top-[43dvh] sm:left-[62dvw] sm:top-[42dvh] md:left-[59dvw] md:top-[41dvh] lg:left-[58dvw] lg:top-[40dvh] xl:left-[57.5dvw] xl:top-[36dvh] z-9999">
-        <div className="w-6 h-6 sm:w-9 sm:h-9 md:w-12 md:h-12 lg:w-16 lg:h-16 bg-blue-500 rounded-full relative filter blur-lg">
+        <div className="absolute w-6 h-6 sm:w-9 sm:h-9 md:w-12 md:h-12 lg:w-16 lg:h-16 bg-blue-500 rounded-full relative filter blur-lg">
           <div className="absolute -inset-4 bg-[#49b3ea] rounded-full animate-pulse"></div>
         </div>
       </div>
