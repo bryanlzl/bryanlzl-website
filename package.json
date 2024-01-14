@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@preline/collapse": "^2.0.2",
+    "@vercel/analytics": "^1.1.1",
     "autoprefixer": "^10.4.16",
     "postcss": "^8.4.33",
     "react": "^18.2.0",

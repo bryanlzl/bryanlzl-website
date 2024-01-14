@@ -1,4 +1,5 @@
 import React, { useState, useRef, useEffect } from "react";
+import { Analytics } from "@vercel/analytics/react";
 import HeaderBar from "./components/HeaderBar";
 import AboutMe from "./components/AboutMe";
 import Expertise from "./components/Expertise";
@@ -57,6 +58,17 @@ function App() {
           handleClick={handleClick}
         />
       )}
+      <Analytics
+        beforeSend={(e) => {
+          const url = new URL(e.url);
+          return {
+            ...e,
+            url: url.toString(),
+          };
+        }}
+        debug={false}
+        mode={"production"}
+      />
     </div>
   );
 }
