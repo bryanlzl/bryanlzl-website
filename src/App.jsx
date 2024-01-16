@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef } from "react";
 import { Analytics } from "@vercel/analytics/react";
 import HeaderBar from "./components/HeaderBar";
 import AboutMe from "./components/AboutMe";
