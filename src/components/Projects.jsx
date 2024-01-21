@@ -6,7 +6,8 @@ import NSMenLifeImg from "../assets/projects/NSMen-life.jpg";
 import InSTATgramImg from "../assets/projects/InSTATgram.jpg";
 import chessImg from "../assets/projects/chess.png";
 import EdusysImg from "../assets/projects/Edusys.png";
-import bryanlzlWebsiteImg from "../assets/projects/bryanlzl-website.png"
+import bryanlzlWebsiteImg from "../assets/projects/bryanlzl-website.png";
+import CConnectWebsiteImg from "../assets/projects/c-connect-website.png";
 
 const Projects = React.forwardRef(function MyInput(props, ref) {
   const [renderInfo, setRenderInfo] = useState({ project: 0, rendered: false });
@@ -24,11 +25,42 @@ const Projects = React.forwardRef(function MyInput(props, ref) {
   };
 
   const expertiseContent = [
-    {id:1, label: "This Website", year: 2023, content:"A personal website created to display portfolio, skills & work experience.", technology: ["React", "TailwindCSS"],      imageStyle: "",
-    images: [bryanlzlWebsiteImg],
-    link: "https://bryanlim.vercel.app",},
+    {
+      id: 1,
+      label: "This Website",
+      year: 2023,
+      content:
+        "A personal website created to display portfolio, skills & work experience.",
+      technology: ["React", "TailwindCSS"],
+      imageStyle: "",
+      images: [bryanlzlWebsiteImg],
+      link: "https://bryanlim.vercel.app",
+    },
+
     {
       id: 2,
+      label: "C-Connect Consultants",
+      year: 2023,
+      content:
+        "Freelanced website design and development project for C-Connect Consultants, a recruitment agency",
+      technology: ["React", "TypeScript", "TailwindCSS"],
+      imageStyle: "",
+      images: [CConnectWebsiteImg],
+      link: "https://c-connect.vercel.app",
+    },
+    {
+      id: 3,
+      label: "EduSYS Learn",
+      year: 2021,
+      content:
+        "Empowering students to a wide variety and array of educational resources powered by Telegram Bot",
+      technology: ["Python", "Telegram Bot"],
+      imageStyle: "",
+      images: [EdusysImg],
+      link: "https://github.com/bryanlzl/EduSYS-learning-platform",
+    },
+    {
+      id: 4,
       label: "Task Manager",
       year: 2023,
       content:
@@ -37,28 +69,6 @@ const Projects = React.forwardRef(function MyInput(props, ref) {
       imageStyle: "",
       images: [taskMakerImg],
       link: "https://github.com/bryanlzl/react-tasker",
-    },
-    {
-      id: 3,
-      label: "Currency Swapper",
-      year: 2023,
-      content:
-        "A dynamic cryptocurrency token swapping interface that allows users to exchange tokens of their choosing to another token.",
-      technology: ["React", "Material UI"],
-      imageStyle: "",
-      images: [currencySwapImg],
-      link: "https://github.com/bryanlzl/currency-swap-form",
-    },
-    {
-      id: 4,
-      label: "InSTATgram",
-      year: 2023,
-      content:
-        "InSTATgram is a social media analytics tool that automates the extraction and analysis of data from Instagram profiles, providing comprehensive insights and a user-friendly interface.",
-      technology: ["UIPath", "PowerBI"],
-      imageStyle: "",
-      images: [InSTATgramImg],
-      link: "https://github.com/bryanlzl/InSTATgram",
     },
     {
       id: 5,
@@ -73,14 +83,14 @@ const Projects = React.forwardRef(function MyInput(props, ref) {
     },
     {
       id: 6,
-      label: "EduSYS Learn",
-      year: 2021,
+      label: "InSTATgram",
+      year: 2023,
       content:
-        "Empowering students to a wide variety and array of educational resources powered by Telegram Bot",
-      technology: ["Python", "Telegram Bot"],
+        "InSTATgram is a social media analytics tool that automates the extraction and analysis of data from Instagram profiles, providing comprehensive insights and a user-friendly interface.",
+      technology: ["UIPath", "PowerBI"],
       imageStyle: "",
-      images: [EdusysImg],
-      link: "https://github.com/bryanlzl/EduSYS-learning-platform",
+      images: [InSTATgramImg],
+      link: "https://github.com/bryanlzl/InSTATgram",
     },
     {
       id: 7,
@@ -93,8 +103,21 @@ const Projects = React.forwardRef(function MyInput(props, ref) {
       images: [chessImg],
       link: "https://github.com/bryanlzl/chess-without-chess-libraries",
     },
-    
   ];
+
+  {
+    /*{
+    id: 3,
+    label: "Currency Swapper",
+    year: 2023,
+    content:
+      "A dynamic cryptocurrency token swapping interface that allows users to exchange tokens of their choosing to another token.",
+    technology: ["React", "Material UI"],
+    imageStyle: "",
+    images: [currencySwapImg],
+    link: "https://github.com/bryanlzl/currency-swap-form",
+  },*/
+  }
 
   return (
     <div
