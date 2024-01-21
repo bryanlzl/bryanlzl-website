@@ -4,7 +4,7 @@ import taskMakerImg from "../assets/projects/task-maker-project.png";
 import currencySwapImg from "../assets/projects/currency-swap-project.png";
 import NSMenLifeImg from "../assets/projects/NSMen-life.jpg";
 import InSTATgramImg from "../assets/projects/InSTATgram.jpg";
-import chessImg from "../assets/projects/chess.png";
+import chessImg from "../assets/projects/chess-cropped.png";
 import EdusysImg from "../assets/projects/Edusys.png";
 import bryanlzlWebsiteImg from "../assets/projects/bryanlzl-website.png";
 import CConnectWebsiteImg from "../assets/projects/c-connect-website.png";
@@ -36,40 +36,6 @@ const Projects = React.forwardRef(function MyInput(props, ref) {
       images: [bryanlzlWebsiteImg],
       link: "https://bryanlim.vercel.app",
     },
-
-    {
-      id: 2,
-      label: "C-Connect Consultants",
-      year: 2023,
-      content:
-        "Freelanced website design and development project for C-Connect Consultants, a recruitment agency",
-      technology: ["React", "TypeScript", "TailwindCSS"],
-      imageStyle: "",
-      images: [CConnectWebsiteImg],
-      link: "https://c-connect.vercel.app",
-    },
-    {
-      id: 3,
-      label: "EduSYS Learn",
-      year: 2021,
-      content:
-        "Empowering students to a wide variety and array of educational resources powered by Telegram Bot",
-      technology: ["Python", "Telegram Bot"],
-      imageStyle: "",
-      images: [EdusysImg],
-      link: "https://github.com/bryanlzl/EduSYS-learning-platform",
-    },
-    {
-      id: 4,
-      label: "Task Manager",
-      year: 2023,
-      content:
-        "A user-friendly task manager (tasker) to create, edit and delete tasks with an intuitive user-interface.",
-      technology: ["React", "Express", "PostgreSQL"],
-      imageStyle: "",
-      images: [taskMakerImg],
-      link: "https://github.com/bryanlzl/react-tasker",
-    },
     {
       id: 5,
       label: "NSMen Life",
@@ -80,6 +46,17 @@ const Projects = React.forwardRef(function MyInput(props, ref) {
       imageStyle: "",
       images: [NSMenLifeImg],
       link: "https://github.com/bryanlzl/AlphaGeeks-NSmen-Life-App",
+    },
+    {
+      id: 2,
+      label: "C-Connect Consultants",
+      year: 2023,
+      content:
+        "Freelanced website design and development project for C-Connect Consultants, a recruitment agency",
+      technology: ["React", "TypeScript", "TailwindCSS"],
+      imageStyle: "",
+      images: [CConnectWebsiteImg],
+      link: "https://c-connect.vercel.app",
     },
     {
       id: 6,
@@ -93,6 +70,17 @@ const Projects = React.forwardRef(function MyInput(props, ref) {
       link: "https://github.com/bryanlzl/InSTATgram",
     },
     {
+      id: 4,
+      label: "Task Manager",
+      year: 2023,
+      content:
+        "A user-friendly task manager (tasker) to create, edit and delete tasks with an intuitive user-interface.",
+      technology: ["React", "Express", "PostgreSQL"],
+      imageStyle: "",
+      images: [taskMakerImg],
+      link: "https://github.com/bryanlzl/react-tasker",
+    },
+    {
       id: 7,
       label: "Chess",
       year: 2020,
@@ -102,6 +90,17 @@ const Projects = React.forwardRef(function MyInput(props, ref) {
       imageStyle: "",
       images: [chessImg],
       link: "https://github.com/bryanlzl/chess-without-chess-libraries",
+    },
+    {
+      id: 3,
+      label: "EduSYS Learn",
+      year: 2021,
+      content:
+        "Empowering students to a wide variety and array of educational resources powered by Telegram Bot",
+      technology: ["Python", "Telegram Bot"],
+      imageStyle: "",
+      images: [EdusysImg],
+      link: "https://github.com/bryanlzl/EduSYS-learning-platform",
     },
   ];
 
