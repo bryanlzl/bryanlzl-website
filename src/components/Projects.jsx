@@ -125,28 +125,10 @@ const Projects = React.forwardRef(function MyInput(props, ref) {
         setDisplayedContent(expertiseContent);
       }
     };
-
     handleResize();
     window.addEventListener("resize", handleResize);
-
-    console.log(displayedContent);
-
     return () => window.removeEventListener("resize", handleResize);
   }, [window.innerWidth]);
-
-  {
-    /*{
-    id: 3,
-    label: "Currency Swapper",
-    year: 2023,
-    content:
-      "A dynamic cryptocurrency token swapping interface that allows users to exchange tokens of their choosing to another token.",
-    technology: ["React", "Material UI"],
-    imageStyle: "",
-    images: [currencySwapImg],
-    link: "https://github.com/bryanlzl/currency-swap-form",
-  },*/
-  }
 
   return (
     <div
@@ -182,15 +164,15 @@ const Projects = React.forwardRef(function MyInput(props, ref) {
             >
               <span
                 className={
-                  "absolute inset-0 max-w-xl p-auto bg-gray-900 opacity-75 "
+                  "absolute inset-0 max-w-xl p-auto bg-gray-900 opacity-100"
                 }
               />
               <span
                 className={
-                  "absolute flex flex-col max-w-xl p-auto font-mono text-[2.vh] opacity-100 "
+                  "absolute flex flex-col max-w-xl p-auto font-mono text-[3.1vw] sm:text-[1.8vw] lg:text-[1.25vw] xl:text-[1.1vw] opacity-100"
                 }
               >
-                <p className="sm:text-[2vmin] overflow-auto">{item.content}</p>
+                <p className="overflow-auto">{item.content}</p>
               </span>
               {item.images.map((projectImage, idx) => (
                 <img
@@ -207,7 +189,7 @@ const Projects = React.forwardRef(function MyInput(props, ref) {
               {item.technology.map((tech, techId) => (
                 <div
                   key={techId}
-                  className="my-1 mx-2 p-1 border border-[2px] border-purple-500 radius-4 rounded"
+                  className="my-1 mx-2 py-1 px-2 border border-[2px] border-purple-500 radius-4 rounded"
                 >
                   {tech}
                 </div>

@@ -21,14 +21,14 @@ const WorkExp = React.forwardRef(function MyInput(props, ref) {
     },
     {
       id: 2,
-      company: "GetGo",
+      company: "GetGo Carsharing",
       role: "Software Engineer Intern",
       responsibility:
         "Developed customer acquisition features on GetGo's main website and front-end of the car management system with React, Svelte, and TypeScript.",
       location: "Singapore",
       startDuration: "May 2022",
       endDuration: "Aug 2022",
-      technology: ["React", "TypeScript", "Svelte"],
+      technology: ["React", "TypeScript", "Bootstrap", "Svelte"],
       companyLogo: GetGoLogo,
     },
   ];
@@ -54,37 +54,44 @@ const WorkExp = React.forwardRef(function MyInput(props, ref) {
       {workExpContent.map((item) => (
         <div
           key={item.id}
-          className="self-center w-[90vw] sm:w-[80vw] md:w-[70vw] md:w-[65vw] max-w-[800px] text-[0.55em]"
+          className="self-center w-[90vw] sm:w-[80vw] md:w-[70vw] md:w-[65vw] max-w-[800px] text-[2.5vw]"
         >
           <div
-            className="!relative flex flex-row justify-between bg-[#374151] mb-2 transition-all duration-300 hover:bg-[#5a6a85] tracking-wide sm:text-[1.1em] md:text-[1.3em] lg:text-[1.6em] xl:text-[1.8em] text-left font-bold py-[12px] px-[15px] rounded-md"
+            className="!relative flex flex-row justify-between bg-[#374151] mb-2 transition-all duration-300 hover:bg-[#5a6a85] tracking-wide sm:text-[2.2vw] md:text-[1.7vw] lg:text-[1.6vw] xl:text-[1.3vw] 2xl:text-[20px] text-left font-bold py-[12px] px-[15px] rounded-md"
             onClick={() => {
               expandHandler(item.id);
             }}
           >
-            <h3>{`${item.role + " @ " + item.company}`}</h3>
-            <p>{`${item.startDuration + " - " + item.endDuration}`}</p>
-            <img
-              className={`w-[1em] transition-all transform ${
-                expandState[item.id] && "rotate-[-180deg]"
-              } duration-500`}
-              src={chevronDown}
-              alt="chevronDownIcon"
-            />
+            <h3>{`${item.company}`}</h3>
+            <div className="flex flex-row">
+              <p className="mr-[4vw]">{`${
+                item.startDuration + " - " + item.endDuration
+              }`}</p>
+              <img
+                className={`w-[1em] mx-[1vw] transition-all transform ${
+                  expandState[item.id] && "rotate-[-180deg]"
+                } duration-500`}
+                src={chevronDown}
+                alt="chevronDownIcon"
+              />
+            </div>
           </div>
           <div
-            className={`flex flex-row rounded-md bg-[#19334d] text-left mb-2  sm:text-[1.1em] md:text-[1.3em] lg:text-[1.6em] xl:text-[1.8em] ${
+            className={`flex flex-row rounded-md bg-[#19334d] text-left mb-2 sm:text-[1.8vw] md:text-[1.5vw] lg:text-[1.6vw] xl:text-[1.2vw] 2xl:text-[17px] ${
               expandState[item.id] ? "block" : "hidden"
             } transition-all delay-150 duration-300 overflow-hidden ease-in-out`}
           >
             <div className="flex flex-col justify-start p-3 w-[75em]">
               <div className="flex flex-row mb-[0.5em]">
-                <img
-                  className="w-[1em] mr-[1em]"
-                  src={locationPinIcon}
-                  alt="location-pin-icon"
-                />
-                <p>{item.location}</p>
+                <p className="mr-[10vw]">{item.role}</p>
+                <div className="flex flex-row">
+                  <img
+                    className="w-[1em] mr-[1em]"
+                    src={locationPinIcon}
+                    alt="location-pin-icon"
+                  />
+                  <p>{item.location}</p>
+                </div>
               </div>
               <p className="text-gray-300">{item.responsibility}</p>
               <span className="flex flex-row">

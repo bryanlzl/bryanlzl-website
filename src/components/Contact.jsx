@@ -54,12 +54,12 @@ const Contact = React.forwardRef(function MyInput(props, ref) {
       className="relative flex flex-col h-auto text-center pt-10 md:pt-20 lg:pt-24 pb-[30vw] xs:pb-[20vw] lg:pb-[10vw] tracking-[-0.06em]"
     >
       <div className="flex flex-row justify-center" ref={contactRef}>
-        <div className="flex flex-col items-center w-full md:w-3/4 lg:w-1/2">
+        <div className="flex flex-col items-center w-full md:w-[70vw] lg:w-[70vw]">
           <div className="mb-6">
             <h2 className="font-bold text-[50px] xs:text-[70px] mb-2">
               Get In Touch
             </h2>
-            <p className="font-mono font-bold text-[12px] xs:text-sm md:text-lg lg:text-xl text-gray-300">
+            <p className="font-mono font-bold text-[2.8vw] sm:text-[2.6vw] md:text-lg lg:text-xl text-gray-300 tracking-normal">
               {scramble ? (
                 <ScrambleText
                   textType="q1"
@@ -74,7 +74,7 @@ const Contact = React.forwardRef(function MyInput(props, ref) {
                 <span className="m-0 p-0 animate-blink-cursor">_</span>
               )}
             </p>
-            <p className="font-mono font-bold text-[12px] xs:text-sm md:text-lg lg:text-xl mb-6 text-gray-300">
+            <p className="font-mono font-bold text-[2.8vw] sm:text-[2.6vw] md:text-lg lg:text-xl mb-6 text-gray-300">
               {scramble ? (
                 <ScrambleText
                   triggerRender=""
