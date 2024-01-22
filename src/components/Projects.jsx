@@ -169,7 +169,7 @@ const Projects = React.forwardRef(function MyInput(props, ref) {
               />
               <span
                 className={
-                  "absolute flex flex-col max-w-xl p-auto font-mono text-[3.1vw] sm:text-[1.8vw] lg:text-[1.25vw] xl:text-[1.1vw] opacity-100"
+                  "absolute flex flex-col max-w-xl p-auto font-mono text-[3.1vw] sm:text-[1.8vw] lg:text-[1.25vw] xl:text-[1.1vw] 2xl:text-[19px] opacity-100"
                 }
               >
                 <p className="overflow-auto">{item.content}</p>
@@ -189,7 +189,7 @@ const Projects = React.forwardRef(function MyInput(props, ref) {
               {item.technology.map((tech, techId) => (
                 <div
                   key={techId}
-                  className="my-1 mx-2 py-1 px-2 border border-[2px] border-purple-500 radius-4 rounded"
+                  className="my-1 mx-2 py-1 px-2 border border-[2px] border-purple-500 radius-4 rounded text-[2.7vw] sm:text-[1.8vw] md:text-[1.5vw] lg:text-[1.1vw] xl:text-[15px]"
                 >
                   {tech}
                 </div>
