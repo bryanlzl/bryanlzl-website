@@ -82,7 +82,7 @@ const WorkExp = React.forwardRef(function MyInput(props, ref) {
             } transition-all delay-150 duration-300 overflow-hidden ease-in-out`}
           >
             <div className="flex flex-col justify-start p-3 w-[75em]">
-              <div className="flex flex-row mb-[0.5em]">
+              <div className="flex flex-row mb-[1em]">
                 <p className="mr-[10vw]">{item.role}</p>
                 <div className="flex flex-row">
                   <img
