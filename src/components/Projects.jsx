@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/index.css";
 import taskMakerImg from "../assets/projects/task-maker-project.png";
 import currencySwapImg from "../assets/projects/currency-swap-project.png";
@@ -37,7 +37,7 @@ const Projects = React.forwardRef(function MyInput(props, ref) {
       link: "https://bryanlim.vercel.app",
     },
     {
-      id: 5,
+      id: 2,
       label: "NSMen Life",
       year: 2022,
       content:
@@ -48,7 +48,7 @@ const Projects = React.forwardRef(function MyInput(props, ref) {
       link: "https://github.com/bryanlzl/AlphaGeeks-NSmen-Life-App",
     },
     {
-      id: 2,
+      id: 3,
       label: "C-Connect Consultants",
       year: 2023,
       content:
@@ -59,7 +59,7 @@ const Projects = React.forwardRef(function MyInput(props, ref) {
       link: "https://c-connect.vercel.app",
     },
     {
-      id: 6,
+      id: 4,
       label: "InSTATgram",
       year: 2023,
       content:
@@ -70,7 +70,7 @@ const Projects = React.forwardRef(function MyInput(props, ref) {
       link: "https://github.com/bryanlzl/InSTATgram",
     },
     {
-      id: 4,
+      id: 5,
       label: "Task Manager",
       year: 2023,
       content:
@@ -81,7 +81,7 @@ const Projects = React.forwardRef(function MyInput(props, ref) {
       link: "https://github.com/bryanlzl/react-tasker",
     },
     {
-      id: 7,
+      id: 6,
       label: "Chess",
       year: 2020,
       content:
@@ -92,7 +92,7 @@ const Projects = React.forwardRef(function MyInput(props, ref) {
       link: "https://github.com/bryanlzl/chess-without-chess-libraries",
     },
     {
-      id: 3,
+      id: 7,
       label: "EduSYS Learn",
       year: 2021,
       content:
@@ -103,6 +103,36 @@ const Projects = React.forwardRef(function MyInput(props, ref) {
       link: "https://github.com/bryanlzl/EduSYS-learning-platform",
     },
   ];
+
+  const twoColOrder = [1, 2, 6, 3, 5, 4, 7];
+  const oneColOrder = [1, 3, 5, 2, 4, 6, 7];
+
+  const [displayedContent, setDisplayedContent] = useState(expertiseContent);
+
+  function rearrangeByOrder(order) {
+    return order.map((id) => expertiseContent.find((item) => item.id === id));
+  }
+
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+
+      if (width >= 640 && width < 1024) {
+        setDisplayedContent(rearrangeByOrder(twoColOrder));
+      } else if (width < 640) {
+        setDisplayedContent(rearrangeByOrder(oneColOrder));
+      } else {
+        setDisplayedContent(expertiseContent);
+      }
+    };
+
+    handleResize();
+    window.addEventListener("resize", handleResize);
+
+    console.log(displayedContent);
+
+    return () => window.removeEventListener("resize", handleResize);
+  }, [window.innerWidth]);
 
   {
     /*{
@@ -130,7 +160,7 @@ const Projects = React.forwardRef(function MyInput(props, ref) {
         Hover to learn more!
       </p>
       <div className="columns-1 sm:columns-2 md:columns-2 lg:columns-3 3xl:columns-4 mx-[5%] gap-0">
-        {expertiseContent.map((item) => (
+        {displayedContent.map((item) => (
           <div
             key={item.id}
             onMouseOver={() => {
