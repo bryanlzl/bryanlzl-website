@@ -38,50 +38,16 @@ const Projects = React.forwardRef(function MyInput(props, ref) {
     },
     {
       id: 2,
-      label: "NSMen Life",
-      year: 2022,
-      content:
-        "NSMen Life is a one-stop mobile application that allows reservists (NSmen) to settle administrative matters and set fitness goals.",
-      technology: ["React Native", "Expo", "Figma"],
+      label: "Cryptocurrency Swapper",
+      year: 2023,
+      content: "A cryptocurrency swap form built with ReactJS and Material UI",
+      technology: ["React", "Material UI"],
       imageStyle: "",
-      images: [NSMenLifeImg],
-      link: "https://github.com/bryanlzl/AlphaGeeks-NSmen-Life-App",
+      images: [currencySwapImg],
+      link: "https://bryanlzl-currency-swap.vercel.app/",
     },
     {
       id: 3,
-      label: "C-Connect Consultants",
-      year: 2023,
-      content:
-        "Freelanced website design and development project for C-Connect Consultants, a recruitment agency",
-      technology: ["React", "TypeScript", "TailwindCSS"],
-      imageStyle: "",
-      images: [CConnectWebsiteImg],
-      link: "https://c-connect.vercel.app",
-    },
-    {
-      id: 4,
-      label: "InSTATgram",
-      year: 2023,
-      content:
-        "InSTATgram is a social media analytics tool that automates the extraction and analysis of data from Instagram profiles, providing comprehensive insights and a user-friendly interface.",
-      technology: ["UIPath", "PowerBI"],
-      imageStyle: "",
-      images: [InSTATgramImg],
-      link: "https://github.com/bryanlzl/InSTATgram",
-    },
-    {
-      id: 5,
-      label: "Task Manager",
-      year: 2023,
-      content:
-        "A user-friendly task manager (tasker) to create, edit and delete tasks with an intuitive user-interface.",
-      technology: ["React", "Express", "PostgreSQL"],
-      imageStyle: "",
-      images: [taskMakerImg],
-      link: "https://github.com/bryanlzl/react-tasker",
-    },
-    {
-      id: 6,
       label: "Chess",
       year: 2020,
       content:
@@ -92,7 +58,52 @@ const Projects = React.forwardRef(function MyInput(props, ref) {
       link: "https://github.com/bryanlzl/chess-without-chess-libraries",
     },
     {
+      id: 4,
+      label: "C-Connect Consultants",
+      year: 2023,
+      content:
+        "Freelanced website design and development project for C-Connect Consultants, a recruitment agency",
+      technology: ["React", "TypeScript", "TailwindCSS"],
+      imageStyle: "",
+      images: [CConnectWebsiteImg],
+      link: "https://c-connect.vercel.app",
+    },
+    {
+      id: 5,
+      label: "NSMen Life",
+      year: 2022,
+      content:
+        "NSMen Life is a one-stop mobile application that allows reservists (NSmen) to settle administrative matters and set fitness goals.",
+      technology: ["React Native", "Expo", "Figma"],
+      imageStyle: "",
+      images: [NSMenLifeImg],
+      link: "https://github.com/bryanlzl/AlphaGeeks-NSmen-Life-App",
+    },
+
+    {
+      id: 6,
+      label: "Task Manager",
+      year: 2023,
+      content:
+        "A user-friendly full-stack task manager (tasker) to create, edit and delete tasks with an intuitive user-interface.",
+      technology: ["React", "Express", "PostgreSQL"],
+      imageStyle: "",
+      images: [taskMakerImg],
+      link: "https://github.com/bryanlzl/react-tasker",
+    },
+    {
       id: 7,
+      label: "InSTATgram",
+      year: 2023,
+      content:
+        "InSTATgram is a social media analytics tool that automates the extraction and analysis of data from Instagram profiles, providing comprehensive insights and a user-friendly interface.",
+      technology: ["UIPath", "PowerBI"],
+      imageStyle: "",
+      images: [InSTATgramImg],
+      link: "https://github.com/bryanlzl/InSTATgram",
+    },
+    {
+      id: 8,
       label: "EduSYS Learn",
       year: 2021,
       content:
@@ -104,8 +115,8 @@ const Projects = React.forwardRef(function MyInput(props, ref) {
     },
   ];
 
-  const twoColOrder = [1, 2, 6, 3, 5, 4, 7];
-  const oneColOrder = [1, 3, 5, 2, 4, 6, 7];
+  const twoColOrder = [1, 2, 5, 8, 4, 6, 7, 3];
+  const oneColOrder = [1, 4, 2, 6, 5, 7, 3, 8];
 
   const [displayedContent, setDisplayedContent] = useState(expertiseContent);
 
