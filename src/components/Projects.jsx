@@ -66,7 +66,7 @@ const Projects = React.forwardRef(function MyInput(props, ref) {
       technology: ["React", "TypeScript", "TailwindCSS"],
       imageStyle: "",
       images: [CConnectWebsiteImg],
-      link: "https://c-connect.vercel.app",
+      link: "https://c-connectconsultants.careers",
     },
     {
       id: 5,
